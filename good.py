@@ -1,13 +1,16 @@
 import streamlit as st
-import joblib  # ใช้ joblib แทน pickle
+import pickle
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # โหลดโมเดลและ scaler
-model = joblib.load("customer_churn_model.joblib")  # ใช้ joblib แทน pickle
-scaler = joblib.load("scaler.joblib")  # ใช้ joblib แทน pickle
+with open("customer_churn_model.pkl", "rb") as model_file:
+    model = pickle.load(model_file)
+
+with open("scaler.pkl", "rb") as scaler_file:
+    scaler = pickle.load(scaler_file)
 
 # ตั้งค่าภาพ Background และสร้าง Frame ตรงกลางที่ปรับขนาดให้พอดีกับข้อความ
 st.markdown(
