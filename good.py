@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # โหลดโมเดลและ scaler
-with open("customer_churn_model.pkl", "rb") as model_file:
+with open("model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
 with open("scaler.pkl", "rb") as scaler_file:
